@@ -23,7 +23,7 @@ public abstract class BaseController {
 		final String value,
 		final boolean isInitial
 	) {
-
+		//Comment
 		return (isInitial ? "?" : "&")
 			.concat(name)
 			.concat("=")
