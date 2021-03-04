@@ -24,6 +24,7 @@ public abstract class BaseController {
 		final boolean isInitial
 	) {
 		//Comment
+		//Comment 2
 		return (isInitial ? "?" : "&")
 			.concat(name)
 			.concat("=")
