@@ -22,7 +22,7 @@ public class EmployeeHelper {
 
 		//Used the example given on the website above, When I typed the code, VS said I needed to surround the code with a try catch, so I did.
 		try {
-			MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+			final MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 			messageDigest.update(password.getBytes());
 			return messageDigest.digest();
 		}catch (NoSuchAlgorithmException e){
