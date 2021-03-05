@@ -48,10 +48,10 @@ public class SignInRouteController extends BaseRouteController {
 			new ModelAndView(ViewNames.SIGN_IN.getViewName()), queryParameters);
 
 		//Chandler replace "Employee_ID" with whatever variable name you call it in QueryParameterNames for this "if" statement
-		//if (queryParameters.containsKey(QueryParameterNames.EMPLOYEE_ID.getValue()))
-		//{
-		//	mav.addObject(ViewModelNames.EMPLOYEE_ID.getValue(), queryParameters.get(QueryParameterNames.EMPLOYEE_ID.getValue()));
-		//}
+		if (queryParameters.containsKey(QueryParameterNames.EMPLOYEE_ID.getValue()))
+		{
+			mav.addObject(ViewModelNames.EMPLOYEE_ID.getValue(), queryParameters.get(QueryParameterNames.EMPLOYEE_ID.getValue()));
+		}
 		return mav;
 	}
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
