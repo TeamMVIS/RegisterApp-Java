@@ -32,7 +32,7 @@ public class EmployeeSignInCommand implements ResultCommandInterface<Employee> {
 	// Helper methods
 	private void validateProperties() {
 		if (StringUtils.isBlank(this.employeeSignIn.getEmployeeId())) {
-			throw new UnprocessableEntityException("employee ID");
+			throw new UnprocessableEntityException("Error 1");
 		}
 		try {
 			Integer.parseInt(this.employeeSignIn.getEmployeeId());
