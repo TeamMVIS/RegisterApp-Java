@@ -1,4 +1,5 @@
 package edu.uark.registerapp.commands.activeUsers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
@@ -9,6 +10,11 @@ import edu.uark.registerapp.models.repositories.ActiveUserRepository;
 public class ActiveUserDeleteCommand{
     // Properties
     private String sessionKey;
+    
+    //Define an active user Repository
+    @Autowired
+    private ActiveUserRepository activeUserRepository;
+
     public String getSessionKey() {
         return this.sessionKey;
     }
@@ -18,7 +24,6 @@ public class ActiveUserDeleteCommand{
     }
     
 	@Transactional
-	@Override
 	public void execute() {
 		final Optional<ActiveUserEntity> activeUserEntity =
 			this.activeUserRepository.findBySessionKey(this.sessionKey);
@@ -27,4 +32,6 @@ public class ActiveUserDeleteCommand{
 			this.activeUserRepository.delete(activeUserEntity.get());
 		}
 	}
+
+
 }

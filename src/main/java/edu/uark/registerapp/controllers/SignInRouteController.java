@@ -70,7 +70,7 @@ public class SignInRouteController extends BaseRouteController {
 		}catch (Exception e) {
 			ModelAndView mav = new ModelAndView(ViewNames.SIGN_IN.getViewName());
 			//add 2 objects, employee id and error message Chandler
-			//mav.addObject(ViewModelNames.EMPLOYEE_ID.getValue(),esi.getEmployeeId());
+			mav.addObject(ViewModelNames.EMPLOYEE_ID.getValue(),esi.getEmployeeId());
 			mav.addObject(ViewModelNames.ERROR_MESSAGE.getValue(), e.getMessage());
 
 			return mav;

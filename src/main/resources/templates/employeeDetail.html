@@ -42,12 +42,52 @@
 							<input id="employeeEmployeeId" type="text" th:value="${!employee.isEmpty} ? ${employee.employeeId} : ''" class="update" disabled />
 						</td>
 					</tr>
-					<!-- TODO: Other employee inputs -->
+					<!-- ADDED: Other employee inputs -->
+					<tr th:class="${employee.isInitialEmployee} ? hidden : ''">
+						<td class="label">Employee Type:</td>
+						<td>
+							<select id="employeeType" class="select">
+								<option th:each="employeeType : ${employeeTypes}" th:value="${employeeType.classification}" th:text = "${employeeType.displayLabel}"
+									th:selected="${employee.classification == employeeType.classification}">
+								</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class = "label">First Name:</td>
+						<td>
+							<input id="employeeFirstName" type="text" th:value="${!employee.isEmpty} ? ${employee.firstName} : ''"class="update" />
+						</td>
+					</tr>
+					<tr>
+						<td class = "label">Last Name:</td>
+						<td>
+							<input id="employeeLastName" type="text" th:value="${!employee.isEmpty} ? ${employee.lastName} : ''"class="update" />
+						</td>
+					</tr>
+					<tr>
+						<td class = "label">Password:</td>
+						<td>
+							<input id="employeePassword" type="password" value=""class="update" />
+						</td>
+					</tr>
+					<tr>
+						<td class = "label">Confirm Password:</td>
+						<td>
+							<input id="employeeConfirmPassword" type="password" value=""class="update" />
+						</td>
+					</tr>
+					
 				</tbody>
 			</table>
 		</div>
 
-		<!-- TODO: An action element to initiate a save -->
+		<!-- ADDED: An action element to initiate a save -->
+		<div class="employeeActionsWrapper" th:classappend="not ${#strings.isEmpty(errorMessage)} ? hidden : ''">
+			<!--br is a line break-->
+			<br />
+			<button id="saveButton" type="button" class="action">Save</button>
+		</div>
 
 		<div id="employeeSavedAlertModal" class="modal animate-opacity-show">
 			<div class="modal-content">
@@ -62,7 +102,7 @@
 	</div>
 
 	<div class="footer" th:classappend="${employee.isInitialEmployee} ? hidden : ''">
-		<img id="signOutImage" src="/images/Sign-Out.png" alt="Sign Out" class="footer" />
+		<img id="logoutImage" src="/images/logout.png" alt="Logout" class="footer" />
 	</div>
 
 </body>
