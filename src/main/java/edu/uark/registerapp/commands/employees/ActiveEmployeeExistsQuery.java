@@ -2,7 +2,6 @@ package edu.uark.registerapp.commands.employees;
 import edu.uark.registerapp.commands.exceptions.NotFoundException;
 import edu.uark.registerapp.models.repositories.EmployeeRepository;
 import edu.uark.registerapp.commands.VoidCommandInterface;
-import edu.uark.registerapp.models.repositories.EmployeeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
