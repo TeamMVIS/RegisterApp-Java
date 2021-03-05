@@ -10,22 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.uark.registerapp.controllers.enums.ViewNames;
 import edu.uark.registerapp.models.api.ApiResponse;
-//import edu.uark.registerapp.commands.activeUsers.ActiveUserDeleteCommand;
-//AKEEM make sure your activeuserdeletecommand is called this^
+import edu.uark.registerapp.commands.activeUsers.ActiveUserDeleteCommand;
 
 @RestController
 @RequestMapping(value = "/api")
 public class SignInRestController extends BaseRestController {
-	//@Autowired
-	//private ActiveUserDeleteCommand activeUserDeleteCommand;
+	@Autowired
+	private ActiveUserDeleteCommand activeUserDeleteCommand;
 
 	@RequestMapping(value="/signOut", method = RequestMethod.DELETE)
 	public @ResponseBody ApiResponse removeActiveUser(
 		final HttpServletRequest request
 	) {
 		// TODO: Sign out the user associated with request.getSession().getId()
-		//this.activeUserDeleteCommand.setSessionKey(request.getSession().getId());
-		//this.activeUserDeleteCommand.execute();
+		this.activeUserDeleteCommand.setSessionKey(request.getSession().getId());
+		this.activeUserDeleteCommand.execute();
 
 
 		return (new ApiResponse())

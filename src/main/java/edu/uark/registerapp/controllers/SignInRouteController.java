@@ -15,19 +15,19 @@ import edu.uark.registerapp.commands.exceptions.NotFoundException;
 import edu.uark.registerapp.controllers.enums.ViewModelNames;
 import edu.uark.registerapp.controllers.enums.ViewNames;
 import edu.uark.registerapp.controllers.enums.QueryParameterNames;
-//import edu.uark.registerapp.commands.employees.ActiveEmployeeExistsQuery;
-//import edu.uark.registerapp.commands.employees.EmployeeSignInCommand;
+import edu.uark.registerapp.commands.employees.ActiveEmployeeExistsQuery;
+import edu.uark.registerapp.commands.employees.EmployeeSignInCommand;
 import edu.uark.registerapp.models.api.EmployeeSignIn;
 
 
 @Controller
 @RequestMapping(value = "/")
 public class SignInRouteController extends BaseRouteController {
-	//@Autowired
-	//private ActiveEmployeeExistsQuery activeEmployeeExistsQuery;
+	@Autowired
+	private ActiveEmployeeExistsQuery activeEmployeeExistsQuery;
 
-	//@Autowired
-	//private EmployeeSignInCommand employeeSignInCommand;
+	@Autowired
+	private EmployeeSignInCommand employeeSignInCommand;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView defaultSignin(
@@ -36,7 +36,7 @@ public class SignInRouteController extends BaseRouteController {
 		//looking for if employees exist
 		try {
 			//search for if employees exist
-			//this.activeEmployeeExistsQuery.execute();
+			this.activeEmployeeExistsQuery.execute();
 		} catch (NotFoundException e) {
 			//if they don't exist, go to Employee Detail
 			return new ModelAndView(REDIRECT_PREPEND.concat(ViewNames.EMPLOYEE_DETAIL.getRoute()));
@@ -47,7 +47,7 @@ public class SignInRouteController extends BaseRouteController {
 		ModelAndView mav = this.setErrorMessageFromQueryString(
 			new ModelAndView(ViewNames.SIGN_IN.getViewName()), queryParameters);
 
-		//AKEEM replace "Employee_ID" with whatever variable name you call it in QueryParameterNames for this "if" statement
+		//Chandler replace "Employee_ID" with whatever variable name you call it in QueryParameterNames for this "if" statement
 		//if (queryParameters.containsKey(QueryParameterNames.EMPLOYEE_ID.getValue()))
 		//{
 		//	mav.addObject(ViewModelNames.EMPLOYEE_ID.getValue(), queryParameters.get(QueryParameterNames.EMPLOYEE_ID.getValue()));
@@ -64,12 +64,12 @@ public class SignInRouteController extends BaseRouteController {
 		try {
 			//sign in
 			//AKEEM this is from the EmployeeSignInCommand you made, make sure these names are right
-			//this.employeeSignInCommand.setSessionId(request.getSession().getId());
-			//this.employeeSignInCommand.setEmployeeSignIn(esi);
-			//this.employeeSignInCommand.execute();
+			this.employeeSignInCommand.setSessionId(request.getSession().getId());
+			this.employeeSignInCommand.setEmployeeSignIn(esi);
+			this.employeeSignInCommand.execute();
 		}catch (Exception e) {
 			ModelAndView mav = new ModelAndView(ViewNames.SIGN_IN.getViewName());
-			//add 2 objects, employee id and error message
+			//add 2 objects, employee id and error message Chandler
 			//mav.addObject(ViewModelNames.EMPLOYEE_ID.getValue(),esi.getEmployeeId());
 			mav.addObject(ViewModelNames.ERROR_MESSAGE.getValue(), e.getMessage());
 
