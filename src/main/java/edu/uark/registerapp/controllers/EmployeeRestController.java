@@ -49,7 +49,6 @@ public class EmployeeRestController extends BaseRestController {
 			return canCreateEmployeeResponse;
 		}
 
-		// TODO: Create an employee;
 		final Employee createdEmployee = this.employeeCreateCommand.setApiEmployee(employee).setIsInitialEmployee(isInitialEmployee).execute();
 
 		if (isInitialEmployee) {
