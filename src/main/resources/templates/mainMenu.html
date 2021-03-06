@@ -21,7 +21,18 @@
 			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 		</div>
 
-		<!-- TODO: Add the various action button elements -->
+		<div class = "mainMenuActionWrapper"> 
+			<br />             
+			<button id="startTransactionButton" type="button" class="action">Start Transaction</button>            
+			<br />             <button id="viewProductsButton" type="button" class="action">View Products</button>                 
+			<div th:class = "not ${isElevatedUser} ? hidden : ''">                
+			<br />                 
+			<button id="createEmployeeButton" type="button" class="action">Start Transaction</button>              
+			<br />                 <button id="salesReportButton" type="button" class="action">View Products</button>              
+			<br />                 <button id="cashierReportButton" type="button" class="action">View Products</button>               
+			<br />             
+		</div>         
+	</class>
 	</div>
 
 	<div class="hidden">
@@ -41,7 +52,7 @@
 	</div>
 
 	<div class="footer">
-		<img id="signOutImage" src="/images/Sign-Out.png" alt="Sign Out" class="footer" />
+		<img id="logoutImage" src="/images/logout.png" alt="Logout" class="footer" />
 	</div>
 		
 </body>
