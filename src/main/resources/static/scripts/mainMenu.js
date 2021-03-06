@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function startTransactionClick() {
-	displayError("Functionality has not yet been implementedA.");
+	displayError("Functionality has not yet been implemented.");
 }
 
 function viewProductClick() {
@@ -19,11 +19,11 @@ function createEmployeeClick() {
 }
 
 function salesReportClick() {
-	displayError("Functionality has not yet been implementedB.");
+	displayError("Functionality has not yet been implemented.");
 }
 
 function cashierReportClick() {
-	displayError("Functionality has not yet been implementedC.");
+	displayError("Functionality has not yet been implemented.");
 }
 
 function getViewProductsActionElement() {
