@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	// TODO: Anything you want to do when the page is loaded?
-	const FormEmployeeID = getEmployeeIdEditElement();
-	FormEmployeeID.focus();
-	FormEmployeeID.select();
+	const employeeIdEditElement = getEmployeeIdEditElement();
+	employeeIdEditElement.focus();
+	employeeIdEditElement.select();
 });
 
 function validateForm() {
-	const FormEmployeeID = getEmployeeIdEditElement().value;
-	const FormEmployeePass = getPasswordEditElement().value;
+	const employeeIdEditElement = getEmployeeIdEditElement();
+	const FormEmployeePass = getPasswordEditElement();
 	var Validated = true;
-	if(isNaN(Number(FormEmployeeID)) || (Number(FormEmployeeID) <= 0)){
+	if(isNaN(Number(employeeIdEditElement.value)) || (Number(employeeIdEditElement.value) <= 0)){
 		displayError("Please enter a valid employee Id.");
-		FormEmployeeID.focus();
-		FormEmployeeID.select();
+		employeeIdEditElement.focus();
+		employeeIdEditElement.select();
 
 		Validated = false;
 	}
 	
-	if(FormEmployeePass.trim() == "" || FormEmployeePass == null) {
+	if(FormEmployeePass.value.trim() === "" || FormEmployeePass == null) {
 		displayError("Please enter a password.");
 		FormEmployeePass.focus();
 		FormEmployeePass.select();
@@ -29,9 +29,9 @@ function validateForm() {
 }
 
 function getPasswordEditElement(){
-	return document.getElementById("Pass");
+	return document.getElementById("password");
 }
 
 function getEmployeeIdEditElement(){
-	return document.getElementById("ID");
+	return document.getElementById("employeeId");
 }
