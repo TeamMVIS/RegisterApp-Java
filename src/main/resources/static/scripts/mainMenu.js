@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementById("viewProductButton").addEventListener("click", viewProductClick());
 	document.getElementById("createEmployeeButton").addEventListener("click", createEmployeeClick());
 	document.getElementById("salesReportButton").addEventListener("click", salesReportClick());
-	document.getElementById("casheerReportButton").addEventListener("click", casheerReportClick());
+	document.getElementById("cashierReportButton").addEventListener("click", casheerReportClick());
 });
 
 function startTransactionClick() {

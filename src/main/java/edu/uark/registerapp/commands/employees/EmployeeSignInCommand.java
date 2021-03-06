@@ -46,9 +46,8 @@ public class EmployeeSignInCommand implements ResultCommandInterface<Employee> {
 
 	@Transactional
 	private EmployeeEntity SignInEmployee() {
-		Optional<EmployeeEntity> employeeEntity =
-			this.employeeRepository.findByEmployeeId(
-				Integer.parseInt(this.employeeSignIn.getEmployeeId()));
+		final Optional<EmployeeEntity> employeeEntity =
+			this.employeeRepository.findByEmployeeId(Integer.parseInt(this.employeeSignIn.getEmployeeId()));
 
 		if (!employeeEntity.isPresent()
 			|| !Arrays.equals(
