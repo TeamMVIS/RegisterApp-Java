@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	// TODO: Anything you want to do when the page is loaded?
-	document.getElementById("startTransactionButton").addEventListener("click", startTransactionClick());
-	document.getElementById("viewProductButton").addEventListener("click", viewProductClick());
-	document.getElementById("createEmployeeButton").addEventListener("click", createEmployeeClick());
-	document.getElementById("salesReportButton").addEventListener("click", salesReportClick());
-	document.getElementById("cashierReportButton").addEventListener("click", casheerReportClick());
+	getStartTransactionActionElement().addEventListener("click", startTransactionClick());
+	getViewProductsActionElement().addEventListener("click", ()=>{window.location.assign("/productListing");});
+	getCreateActionElement().addEventListener("click", ()=>{window.location.assign("/employeeDetail");});
+	getProductSalesReportActionElement().addEventListener("click", salesReportClick());
+	getCashierSalesReportActionElement().addEventListener("click", cashierReportClick());
 });
 
 function startTransactionClick() {
@@ -23,6 +23,26 @@ function salesReportClick() {
 	displayError("Functionality has not yet been implemented.");
 }
 
-function casheerReportClick() {
+function cashierReportClick() {
 	displayError("Functionality has not yet been implemented.");
+}
+
+function getViewProductsActionElement() {
+	return document.getElementById("viewProductButton");
+}
+
+function getCreateActionElement() {
+	return document.getElementById("createEmployeeButton");
+}
+
+function getStartTransactionActionElement() {
+	return document.getElementById("startTransactionButton");
+}
+
+function getProductSalesReportActionElement() {
+	return document.getElementById("productSalesReportButton");
+}
+
+function getCashierSalesReportActionElement() {
+	return document.getElementById("cashierSalesReportButton");
 }
