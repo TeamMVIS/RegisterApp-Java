@@ -56,14 +56,12 @@ public class SignInRouteController extends BaseRouteController {
 	}
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	public ModelAndView performSignIn(
-		// TODO: Define an object that will represent the sign in request and add it as a parameter here
 		EmployeeSignIn esi,
 		HttpServletRequest request
 	) {
 		//if not correct
 		try {
 			//sign in
-			//AKEEM this is from the EmployeeSignInCommand you made, make sure these names are right
 			this.employeeSignInCommand.setSessionId(request.getSession().getId());
 			this.employeeSignInCommand.setEmployeeSignIn(esi);
 			this.employeeSignInCommand.execute();

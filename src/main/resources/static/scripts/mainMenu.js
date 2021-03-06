@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-	// TODO: Anything you want to do when the page is loaded?
 	getStartTransactionActionElement().addEventListener("click", startTransactionClick());
 	getViewProductsActionElement().addEventListener("click", ()=>{window.location.assign("/productListing");});
 	getCreateActionElement().addEventListener("click", ()=>{window.location.assign("/employeeDetail");});
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function startTransactionClick() {
-	displayError("Functionality has not yet been implemented.");
+	displayError("Functionality has not yet been implementedA.");
 }
 
 function viewProductClick() {
@@ -20,11 +19,11 @@ function createEmployeeClick() {
 }
 
 function salesReportClick() {
-	displayError("Functionality has not yet been implemented.");
+	displayError("Functionality has not yet been implementedB.");
 }
 
 function cashierReportClick() {
-	displayError("Functionality has not yet been implemented.");
+	displayError("Functionality has not yet been implementedC.");
 }
 
 function getViewProductsActionElement() {

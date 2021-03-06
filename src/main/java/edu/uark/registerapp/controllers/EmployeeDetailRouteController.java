@@ -32,7 +32,6 @@ public class EmployeeDetailRouteController extends BaseRouteController {
 		final HttpServletRequest request
 	) {
 
-		// TODO: Logic to determine if the user associated with the current session
 		//  is able to create an employee
 		final boolean activeUserExists = this.activeUserExists();
 
@@ -65,8 +64,7 @@ public class EmployeeDetailRouteController extends BaseRouteController {
 			return this.buildNoPermissionsResponse();
 		}
 
-		// TODO: Query the employee details using the request route parameter
-		// TODO: Serve up the page
+
 		return this.buildStartResponse(employeeId, queryParameters);
 	}
 

@@ -18,9 +18,6 @@ public class EmployeeHelper {
 	}
 
 	public static byte[] hashPassword(final String password) {
-		// TODO: Hash the password using a MessageDigest. An example can be found at http://tutorials.jenkov.com/java-cryptography/messagedigest.html
-
-		//Used the example given on the website above, When I typed the code, VS said I needed to surround the code with a try catch, so I did.
 		try {
 			final MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 			messageDigest.update(password.getBytes());

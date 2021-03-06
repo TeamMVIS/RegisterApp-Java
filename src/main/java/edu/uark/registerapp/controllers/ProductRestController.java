@@ -55,8 +55,6 @@ public class ProductRestController extends BaseRestController {
 		final HttpServletResponse response
 	) {
 
-		// TODO: Verify that the user associated with the current session is elevated
-
 		final ApiResponse elevatedUserResponse = this.redirectUserNotElevated(request, response, ViewNames.PRODUCT_LISTING.getRoute());
 
 		if(!elevatedUserResponse.getRedirectUrl().equals(StringUtils.EMPTY)){
@@ -76,7 +74,6 @@ public class ProductRestController extends BaseRestController {
 		final HttpServletResponse response
 	) {
 
-		// TODO: Verify that the user associated with the current session is elevated
 		final ApiResponse elevatedUserResponse = this.redirectUserNotElevated(request, response, ViewNames.PRODUCT_LISTING.getRoute());
 
 		if(!elevatedUserResponse.getRedirectUrl().equals(StringUtils.EMPTY)){

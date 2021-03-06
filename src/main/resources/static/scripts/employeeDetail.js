@@ -1,7 +1,6 @@
 let hideEmployeeSavedAlertTimer = undefined;
 
 document.addEventListener("DOMContentLoaded", () => {
-	// TODO: Things that need doing when the view is loaded
 	document.getElementById("saveButton").addEventListener("click", saveActionClick);
 
 	const employeeFirstNameEditElement = getEmployeeFirstNameEditElement();
