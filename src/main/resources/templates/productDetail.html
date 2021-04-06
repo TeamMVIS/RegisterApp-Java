@@ -28,26 +28,26 @@
 					<tr class="hidden">
 						<td>ID:</td>
 						<td>
-							<input id="productId" type="hidden" th:value="${!product.isEmpty} ? ${product.id} : ''" />
+							<input id="productId" type="hidden" th:value="${!product.isEmpty} ? ${product.id} : ''" class="update" th:disabled="${!isElevatedUser}"/>
 						</td>
 					</tr>
 					<tr>
 						<td class="label">Lookup Code:</td>
 						<td>
-							<input id="productLookupCode" type="text" th:value="${!product.isEmpty} ? ${product.lookupCode} : ''" class="update" />
+							<input id="productLookupCode" type="text" th:value="${!product.isEmpty} ? ${product.lookupCode} : ''" class="update" th:disabled="${!isElevatedUser}"/>
 						</td>
 					</tr>
 					<tr>
 						<td class="label">Count:</td>
 						<td>
-							<input id="productCount" type="number" th:value="${!product.isEmpty} ? ${product.count} : ''" class="update" />
+							<input id="productCount" type="number" th:value="${!product.isEmpty} ? ${product.count} : ''" class="update" th:disabled="${!isElevatedUser}"/>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 
-		<div class="productActionsWrapper">
+		<div class="productActionsWrapper" th:class="(${!isElevatedUser} OR not ${#strings.isEmpty(errorMessage)}) ? hidden : ''">
 			<br />
 			<div id="deleteActionContainer" th:class="${product.isEmpty} ? hidden : ''">
 				<button id="deleteButton" type="button" class="action">Delete</button>
