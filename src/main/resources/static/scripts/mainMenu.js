@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	getStartTransactionActionElement().addEventListener("click", startTransactionClick());
 	getViewProductsActionElement().addEventListener("click", ()=>{window.location.assign("/productListing");});
 	getCreateActionElement().addEventListener("click", ()=>{window.location.assign("/employeeDetail");});
+	document.getElementById("logoutImage").addEventListener("click",()=>{window.location.assign("/");});
 	getProductSalesReportActionElement().addEventListener("click", salesReportClick());
 	getCashierSalesReportActionElement().addEventListener("click", cashierReportClick());
 });
