@@ -2,10 +2,10 @@ let hideEmployeeSavedAlertTimer = undefined;
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.getElementById("saveButton").addEventListener("click", saveActionClick);
-	document.getElementById("logoutImage").addEventListener("click",()=>{window.location.assign("/");});
 	const employeeFirstNameEditElement = getEmployeeFirstNameEditElement();
 	employeeFirstNameEditElement.focus();
 	employeeFirstNameEditElement.select();
+	document.getElementById("returnButton").addEventListener("click",()=>{window.location.assign("/mainMenu");});
 });
 
 // Save
