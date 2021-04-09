@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
+document.addEventListener("DOMContentLoaded", function(event) {
+	document.getElementById("returnButton").addEventListener("click",()=>{window.location.assign("/productListing");});
+});
+
 function productLookupCodeKeypress(event) {
 	if (event.which !== 13) { // Enter key
 		return;

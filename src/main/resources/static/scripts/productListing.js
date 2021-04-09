@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
+document.addEventListener("DOMContentLoaded", function(event) {
+	document.getElementById("returnButton").addEventListener("click",()=>{window.location.assign("/mainMenu");});
+});
+
 function findClickedListItemElement(clickedTarget) {
 	if (clickedTarget.tagName.toLowerCase() === "li") {
 		return clickedTarget;

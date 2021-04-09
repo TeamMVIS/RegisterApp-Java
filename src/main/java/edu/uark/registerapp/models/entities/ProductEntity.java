@@ -46,6 +46,18 @@ public class ProductEntity {
 	public int getCount() {
 		return this.count;
 	}
+	
+	@Column(name="price")
+    private long price;
+
+	public long getPrice() {
+		return this.price;
+	}
+
+	public ProductEntity setPrice(final long price) {
+		this.price = price;
+		return this;
+	}
 
 	public ProductEntity setCount(final int count) {
 		this.count = count;
